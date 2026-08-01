@@ -13,7 +13,7 @@ public class Main {
           // other thread might be already waiting causing 2 true flags = Deadlock
     }
 
-    // ****Other two locks can go below this comment (implementation)****
+
 
     //PetersonsLock Implementation
     //im doing this similar to the existing implementation of LockOne, but with PetersonsLock
@@ -31,8 +31,24 @@ public class Main {
         }
     }
 
+    // LockTwo implementation
+
+    static int counterTwo = 0;
+    static LockTwo lock2 = new LockTwo();
+
+    static void doWorkTwo(int myID){
+        for (int i=0; i<5; ++i){
+            lock2.lock(myID);
+            ++counterTwo;
+            System.out.println("Thread ID: " + myID + "   counter two: " + counterTwo);
+            lock2.unlock();
+        }
+    }
+
+
     public static void main(String[] args) throws InterruptedException {
         // LockOne Main
+        System.out.println("---- Lock One----");
         Thread t0 = new Thread(() -> doWork(0));
         Thread t1 = new Thread(() -> doWork(1));
         // Let threads start executing
@@ -43,6 +59,7 @@ public class Main {
         t1.join();
         
         //PetersonsLock Main
+        System.out.println("\n ---- Petersons Lock ----");
         Thread p0 = new Thread(() -> doWorkPeterson(0));
         Thread p1 = new Thread(() -> doWorkPeterson(1));
         p0.start();
@@ -50,6 +67,15 @@ public class Main {
         //tells main to wait for the threads to finish before it terminates
         p0.join();
         p1.join();
+
+        //LockTwo Main
+        System.out.println("\n ---- Lock Two ----");
+        Thread t2 = new Thread(() -> doWorkTwo(0));
+        Thread t3 = new Thread(() -> doWorkTwo(1));
+        t2.start();
+        t3.start();
+        t2.join();
+        t3.join();
 
     }
 
