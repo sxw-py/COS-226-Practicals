@@ -33,6 +33,12 @@ fix both failure modes above. Free of deadlock and starvation. This explanation 
 ## Testing
 We ran the program 8 times in a row to observe each lock's behaviour under real thread scheduling: 
 see screenshow below
+![LockOne hanging mid-run](screenshots/1.png)
+
+![Peterson's Lock completing all 10 iterations](screenshots/2.png)
+
+![LockTwo hanging at iteration 9](screenshots/3.png)
+
 
 | Lock | Result |
 |---|---|
