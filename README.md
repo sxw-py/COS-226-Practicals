@@ -24,7 +24,14 @@ javac Main.java LockOne.java PetersonsLock.java; java Main
 
 ## Algorithms Demonstrated
 
-//Please a small description of your program here(Ash and Thando)
+### 1. LockOne
+`LockOne` uses a per-thread `flag[]` array. A thread sets its own flag to
+`true` and then spins while the other thread's flag is `true`.
+
+In this system, `LockOne` provides the first baseline example: it shows
+the basic intent of mutual exclusion, but it can deadlock when both threads
+raise their flags at the same time and then wait forever.
+
 ### 2. Lock Two
 An algorithm where each thread volunteers to be the `victim` (the thread that must wait for the other). It is not deadlock or starvation free.
 
