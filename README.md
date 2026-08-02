@@ -8,7 +8,7 @@ Implementation of three mutual exclusion locking a;gorithms, namely LockOne, loc
 
 **Step 1 Compile:**
 ```bash
-javac Main.java LockOne.java PetersonsLock.java
+javac Main.java LockOne.java PetersonsLock.java LockTwo.java
 ```
 
 **Step 2 Run:**
@@ -24,7 +24,6 @@ javac Main.java LockOne.java PetersonsLock.java; java Main
 
 ## Algorithms Demonstrated
 
-
 ### 1. LockOne
 `LockOne` uses a per-thread `flag[]` array. A thread sets its own flag to
 `true` and then spins while the other thread's flag is `true`.
@@ -33,17 +32,8 @@ In this system, `LockOne` provides the first baseline example: it shows
 the basic intent of mutual exclusion, but it can deadlock when both threads
 raise their flags at the same time and then wait forever.
 
-### 2. `doWork` with `LockOne`
-`doWork(int myID)` is the worker routine used by both threads for the
-`LockOne` demonstration. On each iteration it:
-- calls `lock1.lock(myID)` before entering the critical section,
-- increments the shared `counter`,
-- prints the thread ID and current counter value,
-- immediately calls `lock1.unlock(myID)`.
-
-This function is where the lock is actually exercised. It cleanly marks
-the critical section boundaries and makes lock behaviour observable in
-real time.
+### 2. Lock Two
+An algorithm where each thread volunteers to be the `victim` (the thread that must wait for the other). It is not deadlock or starvation free.
 
 ### 3. Peterson's Lock
 Combines `flag[]` (from LockOne) and a `victim` variable (from LockTwo) to
