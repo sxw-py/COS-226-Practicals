@@ -24,10 +24,6 @@ javac Main.java LockOne.java PetersonsLock.java; java Main
 
 ## Algorithms Demonstrated
 
-This program runs two threads against three lock algorithms to compare
-their behaviour under contention. Each thread repeats a small critical
-section that increments a shared counter and prints progress, so mutual
-exclusion (or failure of it) is directly visible in the output.
 
 ### 1. LockOne
 `LockOne` uses a per-thread `flag[]` array. A thread sets its own flag to
