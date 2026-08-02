@@ -8,7 +8,7 @@ Implementation of three mutual exclusion locking a;gorithms, namely LockOne, loc
 
 **Step 1 Compile:**
 ```bash
-javac Main.java LockOne.java PetersonsLock.java
+javac Main.java LockOne.java PetersonsLock.java LockTwo.java
 ```
 
 **Step 2 Run:**
@@ -25,6 +25,8 @@ javac Main.java LockOne.java PetersonsLock.java; java Main
 ## Algorithms Demonstrated
 
 //Please a small description of your program here(Ash and Thando)
+### 2. Lock Two
+An algorithm where each thread volunteers to be the `victim` (the thread that must wait for the other). It is not deadlock or starvation free.
 
 ### 3. Peterson's Lock
 Combines `flag[]` (from LockOne) and a `victim` variable (from LockTwo) to
