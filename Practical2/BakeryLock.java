@@ -9,9 +9,9 @@ public class BakeryLock implements Lock {
         flag = new VolatileBoolean[n];
         label = new VolatileInt[n];
         for (int i = 0; i < n; i++) {
-            flag[i] = new VolatileBoolean(false);
+            flag[i] = new VolatileBoolean(false); 
             label[i] = new VolatileInt(0);
-        }
+        } //intialising the flags and labels to prevent null pointer exceptions
     }
 
     @Override
