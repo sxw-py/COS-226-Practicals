@@ -5,6 +5,7 @@ N-Thread Mutual Exclusion
 group members:
 Zamokuhle Zwane u23533413
 Ashley Mthemba  u25072235
+Thandolwethu Jantjies u25114469
 
 0. reference
 
