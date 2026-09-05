@@ -1,6 +1,7 @@
 # COS226 Practical 3: TAS/TTAS Locks and Contention
 
 u23533413 Zamokuhle Zwane
+u25072235 Ashley Mthemba
 (add your student numbers here)
 
 ## what's in here
