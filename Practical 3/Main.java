@@ -1,3 +1,8 @@
+/*
+Just the basic demo, it proves the lock works(counter comes out exact) no race condition
+switch between TAS/TTASLock be low to test each one
+full contention experiment task 3 lives in Contention experiment.java
+*/
 public class Main 
 {
 
@@ -41,8 +46,11 @@ public class Main
 
         long endTime = System.nanoTime();
 
+        //if actual != expected here, mutual exclusion is broken, shouldn't happen
         System.out.println("Expected counter: " + (NUMBER_OF_THREADS * INCREMENTS_PER_THREAD));
         System.out.println("Actual counter: " + counter);
         System.out.println("Execution time: " + (endTime - startTime) / 1000000 + " ms");
+
+        //run this for actual task 3 result table, //contentionExperiment.run();
     }
 }
