@@ -2,7 +2,7 @@
 
 u23533413 Zamokuhle Zwane
 u25072235 Ashley Mthemba
-(add your student numbers here)
+u25114469 Thandolwethu Jantjies
 
 ## what's in here
 
