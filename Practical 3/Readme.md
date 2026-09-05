@@ -71,6 +71,8 @@ javac *.java
 java Main
 java ContentionExperiment > results.txt
 ```
+reference
+Herlihy, M. and Shavit, N. (2012) The Art of Multiprocessor Programming. Revised 1st edn. Waltham, MA: Morgan Kaufmann, Chapter 7 (Spin Locks and Contention).
 
 ## notes to self
 
