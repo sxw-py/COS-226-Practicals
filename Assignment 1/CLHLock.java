@@ -38,7 +38,7 @@ public class CLHLock implements Lock {
         myPred.set(pred);
         // Spin while my predecessor is locked
         while (pred.locked) {
-            // spin
+            Thread.yield(); // yield to prevent starvation
         }
     }
 

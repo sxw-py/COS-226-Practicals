@@ -32,6 +32,7 @@ public class MCSLock implements Lock {
 
             // Spin locally until our predecessor hands us the lock
             while (qnode.locked) {
+                Thread.yield();
             }
         }
     }
@@ -45,6 +46,7 @@ public class MCSLock implements Lock {
 
             // Another thread is joining but hasn't linked to thread yet; wait for them
             while (qnode.next == null) {
+                Thread.yield();
             }
         }
 

@@ -7,8 +7,8 @@ public class TTASLock implements Lock {
     public void lock() {
         while (true) {
             while (state.get()) {
+                Thread.yield();
             }
-            ;
             if (!state.getAndSet(true))
                 return;
         }
